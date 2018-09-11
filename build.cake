@@ -40,6 +40,7 @@ var pre = HasArgument("pre");
 var sourcePath = Argument<string>("sourcePath","./src");
 var solutionName = "Owin.Http.Hosting.sln";
 var nugetToken = Argument("nugetToken", "");
+var nugetSource = Argument("nugetSource","");
 var branch = Argument("branch", "dev");
 
 //////////////////////////////////////////////////////////////////////
@@ -169,7 +170,7 @@ IsDependentOn("NugetPack")
 		{
 			  NuGetPush(packages, new NuGetPushSettings 
             { 
-                Source ="https://nuget.intra.vision-box.com/api/v2/package",
+                Source =nugetSource,
                 ApiKey = accessToken, 
                 Verbosity = NuGetVerbosity.Detailed,
             });
