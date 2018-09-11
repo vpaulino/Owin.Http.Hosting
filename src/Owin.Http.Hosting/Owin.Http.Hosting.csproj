@@ -1,0 +1,30 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard20;net462</TargetFrameworks>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+
+	<PropertyGroup>
+		<AssemblyName>Owin.Http.Hosting</AssemblyName>
+		<PackageId>Owin.Http.Hosting</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<RootNamespace>Owin.Http.Hosting</RootNamespace>
+		<PackageDescription>Owin.Http.Hosting package provides an http server selfhost approach </PackageDescription>
+		<PackageTags>dotnet websockets owin</PackageTags>
+		<PackageReleaseNotes>In this version its available the know use cases of vision box regarding selfhost</PackageReleaseNotes>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+    
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.6" Condition="'$(TargetFramework)' == 'net462'" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" Version="5.2.6" Condition="'$(TargetFramework)' == 'net462'" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.0.0" Condition="'$(TargetFramework)' == 'net462'" />
+    <PackageReference Include="Microsoft.Owin.SelfHost" Version="4.0.0" Condition="'$(TargetFramework)' == 'net462'" />
+  </ItemGroup>
+
+  
+</Project>

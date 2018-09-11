@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard20;net462</TargetFrameworks>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+	<PropertyGroup>	 
+		<AssemblyName>Owin.Websockets</AssemblyName>
+		<PackageId>Owin.Websockets</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<RootNamespace>Owin.Websockets</RootNamespace>
+		<PackageDescription>Owin.Websockets package enables websockets communication to an Http Owin Selfhost server </PackageDescription>
+		<PackageTags>dotnet websockets owin</PackageTags>
+		<PackageReleaseNotes>In this version its available the basic websockets operations send/receive</PackageReleaseNotes>
+	</PropertyGroup>
+	
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.6" Condition="'$(TargetFramework)' == 'net462'" />
+    <PackageReference Include="Microsoft.Owin" Version="4.0.0" Condition="'$(TargetFramework)' == 'net462'" />
+    <PackageReference Include="Microsoft.Owin.SelfHost" Version="4.0.0" Condition="'$(TargetFramework)' == 'net462'" />
+  </ItemGroup>
+
+</Project>
